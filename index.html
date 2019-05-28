@@ -21,6 +21,9 @@ https://fastspring.com/blog/price-software-subscription-based-model/
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,200,100|Poiret+One&display=swap');
 
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,400);
+
+
 /*                                         ! Responsive Blog Post Started Here ...
 =======================================================================================================================*/
 *,
@@ -75,7 +78,7 @@ h3
 	{
 font-weight: 200; /* Change to 300 */
 text-align: center; font-size: 93px;
-line-height: 44px;
+/*line-height: 44px;*/
 } /*removed from h2,h3*/
 
 .buttonflip {
@@ -84,6 +87,7 @@ line-height: 44px;
  font-weight: 200; 
  text-align: center; 
  font-size: 3vw; 
+ vertical-align: middle;
 }
 
 .main-title {
@@ -335,12 +339,81 @@ li {
   color: rgba(250,250,250,1);
   text-shadow: (220,230,220,0.7);
   text-align: center;
-  font-size: 3vw !important;
+  font-size: 4vw !important;
   margin-top: 250px;
 	
 }
+
+section {
+  position: relative;
+  width: 400px;
+  margin: 40px auto;
+  box-shadow: 1px 1px 4px rgba(0,0,0,.2);
+  font-family: "Quicksand" !important;
+}
+
+img {
+  display: block;
+}
+
+header {
+  background: #ecf0f1;
+  max-height: 190px;
+  background: rgba(236, 240, 241,.9);
+  overflow: hidden;
+}
+
+.left {
+ padding: 30px 30px;
+ float: left;
+ width: 190px; 
+
+}
+
+.right {
+  padding: 30px 0;
+ float: left;
+ width: 150px; 
+ text-align: center;
+}
+
+#play {
+  height: 40px;
+  width: 40px;
+  border: 0;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/1383113001_playback_play.png') center center no-repeat;
+  
+    &:focus {
+    outline: none;
+  }
+}
+
+#pause {
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/38816/1383113014_playback_pause.png') center center no-repeat;
+  height: 30px;
+  width: 30px;
+  border: 0;
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+.rec-name {
+  font-size: 1.5em !important;
+  color: #333;
+}
+ 
+.rec-subtitle {
+   margin: 5px 0; 
+   color: rgba(149, 165, 166,1.0);
+  font-size: 18px;
+  padding-bottom: 30px;
+ }
+
+
 </style>
-<title>Simpleblog</title>
+<title>Magnetic Blog</title>
 </head>
 
 <br><br><br>
@@ -387,6 +460,21 @@ On the most prominent stories told by Hill is about his own son, Blair. He tells
 
 <h3>Some Key Takeaways</h3>
   <br>
+  <section>
+  <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/577362/dark-darkness-loneliness-1446948.jpg' width="400" height="600">
+  <header>
+    <div class='left'>
+      <h1 class="rec-name">黑馬</h1>
+      <h2></h2>
+      <h2 class="rec-subtitle">Truth and lies about the Tech worker shortage.</h2>
+    </div>
+    <div class='right'>
+    <audio id="demo" src="http://www.woo55.pk/adata/10050/14%20Come%20Thru%20-%20(www.SongsLover.pk).mp3"></audio>
+    <button id='play'></button>
+    <button id='pause'></button>
+    </div>
+  </header>
+</section>
 </div>
 </div>
 
@@ -449,7 +537,7 @@ On the most prominent stories told by Hill is about his own son, Blair. He tells
   <br>
 </div></div>
 
-<h1 class="ticker"> Core & Corner </h1>
+<h1 class="ticker"> Company Name </h1>
 
 
 

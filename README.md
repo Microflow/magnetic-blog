@@ -1,5 +1,7 @@
 # Magnetic Blog
 
+## [See it in action](http://magneticblog.surge.sh/)
+
 ## TODO
 
 Add list styles
