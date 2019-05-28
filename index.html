@@ -1,0 +1,460 @@
+<!-- 
+TODO
+
+- Check the spaces at the base of section titles. 
+- Smooth scroll
+ https://jsfiddle.net/princebazawule/4wcayxkv/
+- Bezier scroll
+https://www.w3schools.com/cssref/css3_pr_transition-timing-function.asp
+- How to price software
+https://medium.com/@jakesaper/how-to-price-your-software-101-4762fb939dd
+- Subscription Based
+https://fastspring.com/blog/price-software-subscription-based-model/
+
+
+-->
+
+
+<!DOCTYPE html>
+<head><style>
+  @charset "utf8";
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,200,100|Poiret+One&display=swap');
+
+/*                                         ! Responsive Blog Post Started Here ...
+=======================================================================================================================*/
+*,
+*:after,
+*:before,
+html
+	{box-sizing:border-box}
+
+body{
+/* 	background:url("https://learn.shayhowe.com/assets/images/triangles/triangles.svg")repeat-y; */
+	background-position:110% 0;
+	margin:0;
+	padding:50px 20%;
+  background-color:#efefef;
+  font-family: "Raleway";
+  font-weight: 300;
+  /*color: #111;*/
+/*   max-width: 50%; */
+	}
+
+blockquote,
+img
+/* 	{border-radius:10px} */
+
+blockquote,
+img,
+strong.block
+	{display:block;position:relative}
+
+img {
+  border-radius: 18px;
+}
+
+.one-pic {
+  opacity: 0.7;
+}
+
+h1 {
+  font-weight: 200;
+  margin-top: 10%;
+  color:#111;
+  text-shadow: 0px 1px 1px #222;
+  /*font-size: 8vw;*/
+  letter-spacing: 1px;
+  margin:0;
+  font-size:90px !important;
+/*   font-size: 63px; */
+}
+
+h2,
+h3
+	{
+font-weight: 200; /* Change to 300 */
+text-align: center; font-size: 93px;
+line-height: 44px;
+} /*removed from h2,h3*/
+
+.buttonflip {
+ color:#111;
+ text-shadow: 0px 1px 1px #222;
+ font-weight: 200; 
+ text-align: center; 
+ font-size: 3vw; 
+}
+
+.main-title {
+ color:#111;
+ text-shadow: 0px 1px 1px #222;
+ font-weight: 200; 
+ text-align: center; 
+ font-size: 5vw; 
+}
+
+.section-title {
+	margin-top: 100px;
+	font-size: 4vw !important;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+li,
+.me span
+	{font-size:16px}
+
+li,
+p, a 
+	{font-family:'Raleway',sans-serif;word-spacing:2px;   font-weight: 300;}
+
+p.top:before,
+strong.block:before{
+	background-image:radial-gradient(circle,#fff,#fff,#fff,#fff,#fff,#fff,#808080,#fff,#fff,#fff,#fff,#fff,#fff);
+	background-position:center -12px;
+	background-size:16px 24px;
+	background-repeat:repeat-x;
+	content:"";
+	width:100%;
+	height:16px;
+	bottom:-24px;
+	display:block;
+	position:absolute;
+	transition:all .5s ease;
+  font-weight: 300;
+  color: #121212;
+  font-size: 23px;
+	}
+
+.medium-font
+	{font-size:18px}
+
+.small-font
+	{
+font-size:25px;
+color: #121212;
+font-weight: 300;
+}
+
+.center
+	{text-align:center;
+text-transform: uppercase;
+font-size: 49px;
+font-weight: 300;}
+
+.justify
+	{text-align:justify}
+
+.m0
+	{margin:0}
+
+.indent
+	{text-indent:20px}
+
+h1
+	{}
+
+p.top
+	{position:relative;color:#121212}
+
+h2
+	{font-size:44px}
+
+img
+	{width:100%}
+
+strong.block
+	{width:230px;margin:10px auto 0 auto}
+
+blockquote{
+	background:#f1f1f1;
+	width:90%;
+	margin:30px auto;
+	padding:16px;
+	font-style:italic;
+/* 	box-shadow:0 8px 6px -6px #595959 */
+	}
+
+blockquote p:before,
+blockquote p:after
+	{font-size:1.5em;vertical-align:sub;font-weight:400}
+
+/* blockquote p:before
+	{content:'\00201C';margin-right:0.2em}
+
+blockquote p:after
+	{content:'\00201D';margin-left:0.2em} */
+
+h3
+	{font-size:30px}
+
+@media (max-width:320px){
+	strong.block
+		{width:100%}
+	}
+
+@media (max-width:800px){
+	body
+		{;padding:50px 16px}
+	
+	h1
+		{font-size:34px}
+	
+	h2
+		{font-size:30px}
+	
+	h2,
+	h3
+		{margin:50px 0 0 0}
+	
+	h3
+		{font-size:26px}
+  
+  .small-font
+	{
+font-size:18px;
+color: #121212;
+font-weight: 300;
+}
+  
+	}
+
+@media screen and (min-width:801px) and (max-width:900px){
+	body
+		{background-position:125% 0}
+	}
+
+@media screen and (min-width:901px) and (max-width:1100px){
+	body
+		{background-position:120% 0}
+  p {font-size: 12px;}
+	}
+/*                                          ! Responsive Blog Post Ended Here ...
+=======================================================================================================================*/
+
+/* This Is Not Part Of Responsive Blog Post */
+.me{
+	background:url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/577362/Flowers_Evening_Pink_Pexels.jpg")no-repeat center / contain;
+	width:40px;
+	height:40px;
+	bottom:16px;
+	right:16px;
+	display:block;
+	position:fixed;
+	border-radius:50%;
+	z-index:999;
+	animation:me 2s linear infinite alternate
+	}
+
+@keyframes me{
+	from{transform:translateY(-4px)}
+	to{transform:translateY(4px)}
+	}
+
+.me:hover span
+	{right:50px;opacity:1;visibility:visible}
+
+.me span{
+	width:150px;
+	top:10px;
+	right:0;
+	display:block;
+	position:absolute;
+	font-style:normal;
+	text-align:center;
+	z-index:-1;
+	opacity:0;
+	visibility:hidden;
+	transition:all .5s ease
+	}
+
+   #flip {
+  padding: 5px;
+  text-align: center;
+  background-color: #efefef;
+  border: solid 1px #999;
+  border-radius: 10px 4px 10px 4px;
+  font-family: 'Poiret One', cursive;
+  
+}
+
+   #flip2 {
+  padding: 10px;
+  text-align: center;
+  background-color: #efefef;
+  border: solid 1px #999;
+  border-radius: 4px 10px 4px 4px;
+  font-family: 'Poiret One', cursive;
+}
+
+#flip3 {
+  padding: 10px;
+  text-align: center;
+  background-color: #efefef;
+  border: solid 1px #999;
+  border-radius: 4px 10px 4px 4px;
+  font-family: 'Poiret One', cursive;
+}
+
+#panel {
+/*   padding: 50px; */
+  display: none;
+  
+/*   text-shadow: 1px 0px 0px #ddd; */
+}
+
+#panel2 {
+/*   padding: 50px; */
+  display: none;
+  letter-spacing: 1px;
+}
+
+
+#panel3 {
+/*   padding: 50px; */
+  display: none;
+  letter-spacing: 1px;
+}
+</style>
+<title>Simpleblog</title>
+</head>
+
+<br><br><br>
+<h2 class="main-title">YOUR DREAM HERE</h2>
+  <p><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/577362/animal-animal-photography-antlers-2302802.jpg" alt="cherry blossoms"></p>
+<br>
+
+<div id="flip"><h2 class="buttonflip">YADDA YADDA</h2></div>
+<br>
+<div id="flip2"><h2 class="buttonflip">WOOHOO WOOHOO</h2></div>
+<br>
+<div id="flip3"><h2 class="buttonflip">SCHPOINK</h2></div>
+
+<!-- LIST SECTION-->
+
+<div id="panel">
+<h1 class="section-title">Section 1 Title</h1>
+
+<p class="small-font justify">The secret of achievement was tantalizingly offered to readers of Think and Grow Rich, but Hill felt readers would benefit most if they discovered it for themselves. Although most readers feel that he never explicitly identified this secret, he offers these words about 20 pages into the book: If you truly desire money so keenly that your desire is an obsession, you will have no difficulty in convincing yourself that you will acquire it. The object is to want money, and to be so determined to have it that you convince yourself that you will have it. . . You may as well know, right here, that you can never have riches in great quantities unless you work yourself into a white heat of desire for money, and actually believe you will possess it. However, Napoleon Hill also states at the introduction that the secret that the 'canny, lovable old Scotsman carelessly tossed it into my mind' (Andrew Carnegie)  </p>
+
+<p class="small-font justify">was also the same secret that Manuel L. Quezon (then Resident Commissioner of the Philippine Islands) was inspired by to 'gain freedom for his people, and went on to lead them as its first president.' And although a burning desire for money is mentioned throughout the book, it would be both presumptuous and folly to presume it is this which is the secret that Hill refers to, especially since the 'secret' is far more effective if realized by the reader when they are ready for it. Napoleon Hill resolves the secret at the end of his book The Law of Success: it is The Golden Rule. Only by working harmoniously in co-operation with other individuals or groups of individuals and thus creating value and benefit for them will one create sustainable achievement for oneself.  </p>
+
+<p class="small-font justify">  </p>
+
+<p class="small-font justify">  </p>
+
+<p class="small-font justify">  </p>
+  
+
+
+<h3>Subheading Subheading</h3>
+
+<p class="small-font justify indent">He presented the idea of a "Definite Major Purpose" as a challenge to his readers in order to make them ask themselves, "In what do I truly believe?" According to Hill, 98% of people had few or no firm beliefs, and this alone put true success firmly out of their reach.
+
+On the most prominent stories told by Hill is about his own son, Blair. He tells how his son was an inspiration to him, because although Blair was born without ears, without any normal hearing organs at all, even though his doctor told Hill that his son would neither be able to hear nor speak, Blair grew up to be able to hear and speak almost normally. Hill tells how his son, in his last year of college, picked up the manuscript of chapter two of Think and Grow Rich, discovered Hill's secret for himself and went on to be an inspiration for hundreds and thousands of people who could not hear or speak</p>
+
+<p class="small-font justify indent">Vivamus mollis fringilla dolor, a sollicitudin turpis posuere elementum. Quisque risus dolor, rhoncus sed imperdiet vel, tristique ac nisi. Sed dapibus aliquam nibh, at posuere dolor lobortis ac. Nam quis urna ac magna facilisis blandit. Maecenas vel arcu nec ipsum venenatis malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam semper ac sem at interdum. Ut massa est, egestas id sem at, commodo consequat velit.</p>
+
+<h3>Some Key Takeaways</h3>
+  <br>
+</div>
+</div>
+
+
+
+<!--SECOND SECTION TWO-->
+<div id="panel2"><h1 class="section-title">Section 2 Title</h1>
+
+<p class="small-font justify">222 Spring has sprung! In this tremendous blog article we're going to cover some points. This is where I'm telling you that what I'm going to tell you. Then I'm going to tell you those things. Then, because your special, and I'm to tell you what I told you. </p>
+
+<!-- <blockquote>
+<p class="medium-font center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis fringilla dolor, a sollicitudin turpis posuere elementum.</p>
+</blockquote> -->
+
+<p class="small-font justify">That quote was from the famous latin composer... nope, just kidding. Emmet generated it because that's a feature that it has. In the next section, we're really going to get into the meat of this blog post.</p>
+
+<h3>All the Good Stuff is in These Paragraphs</h3>
+
+<p class="small-font justify indent">Donec accumsan lacinia blandit</em>. Nunc ornare ante id sapien ullamcorper sollicitudin. Vestibulum vel odio sapien. Nam quis est maximus, cursus nibh at, dictum lorem. Donec vestibulum quam quis lorem egestas semper. Nullam et congue libero, a ultricies urna. Vivamus sed efficitur nisl. Fusce dapibus, lectus vel laoreet mattis, quam tellus fermentum diam, et luctus sem tortor in lorem. Nunc interdum ipsum ligula. Pellentesque sed diam erat.</p>
+
+<p class="small-font justify indent">Aliquam porta metus nec erat ullamcorper accumsan. Etiam egestas sit amet ante vitae lacinia. Donec ultricies eu nisl vel mattis. Suspendisse vestibulum sed velit lacinia imperdiet. Vivamus in nibh ullamcorper, laoreet arcu ut, gravida nulla. Curabitur in diam tempus, cursus mauris a, posuere tellus. Pellentesque purus orci, commodo non ex eu, porttitor sagittis erat. Vestibulum at orci nec turpis pharetra imperdiet quis ut urna. Donec eget accumsan tortor. In interdum mauris at velit gravida, in euismod lacus sodales. Curabitur pellentesque nunc nulla, id convallis enim eleifend vel.</p>
+
+<p class="small-font justify indent">Vivamus mollis fringilla dolor, a sollicitudin turpis posuere elementum. Quisque risus dolor, rhoncus sed imperdiet vel, tristique ac nisi. Sed dapibus aliquam nibh, at posuere dolor lobortis ac. Nam quis urna ac magna facilisis blandit. Maecenas vel arcu nec ipsum venenatis malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam semper ac sem at interdum. Ut massa est, egestas id sem at, commodo consequat velit.</p>
+
+<h3>Some Key Takeaways</h3>
+
+<p class="small-font justify">After reading this tremendous blog article, these are the salient points:</p>
+
+<p class="m0 small-font justify">In a pellentesque eros. Morbi elementum venenatis est quis cursus. Nunc vitae mi maximus, volutpat enim nec, ultricies libero. Donec pharetra dui arcu, vel sagittis dolor scelerisque nec!</p>
+  <br>
+</div>
+</div>
+
+
+
+<!--THIRD SECTION TWO-->
+<div id="panel3"><h1 class="section-title">Section 3 Title</h1>
+
+<p class="small-font justify">222 Spring has sprung! In this tremendous blog article we're going to cover some points. This is where I'm telling you that what I'm going to tell you. Then I'm going to tell you those things. Then, because your special, and I'm to tell you what I told you. </p>
+
+<!-- <blockquote>
+<p class="medium-font center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus mollis fringilla dolor, a sollicitudin turpis posuere elementum.</p>
+</blockquote> -->
+
+<p class="small-font justify">That quote was from the famous latin composer... nope, just kidding. Emmet generated it because that's a feature that it has. In the next section, we're really going to get into the meat of this blog post.</p>
+
+<h3>All the Good Stuff is in These Paragraphs</h3>
+
+<p class="small-font justify indent">Donec accumsan lacinia blandit</em>. Nunc ornare ante id sapien ullamcorper sollicitudin. Vestibulum vel odio sapien. Nam quis est maximus, cursus nibh at, dictum lorem. Donec vestibulum quam quis lorem egestas semper. Nullam et congue libero, a ultricies urna. Vivamus sed efficitur nisl. Fusce dapibus, lectus vel laoreet mattis, quam tellus fermentum diam, et luctus sem tortor in lorem. Nunc interdum ipsum ligula. Pellentesque sed diam erat.</p>
+
+<p class="small-font justify indent">Aliquam porta metus nec erat ullamcorper accumsan. Etiam egestas sit amet ante vitae lacinia. Donec ultricies eu nisl vel mattis. Suspendisse vestibulum sed velit lacinia imperdiet. Vivamus in nibh ullamcorper, laoreet arcu ut, gravida nulla. Curabitur in diam tempus, cursus mauris a, posuere tellus. Pellentesque purus orci, commodo non ex eu, porttitor sagittis erat. Vestibulum at orci nec turpis pharetra imperdiet quis ut urna. Donec eget accumsan tortor. In interdum mauris at velit gravida, in euismod lacus sodales. Curabitur pellentesque nunc nulla, id convallis enim eleifend vel.</p>
+
+<p class="small-font justify indent">Vivamus mollis fringilla dolor, a sollicitudin turpis posuere elementum. Quisque risus dolor, rhoncus sed imperdiet vel, tristique ac nisi. Sed dapibus aliquam nibh, at posuere dolor lobortis ac. Nam quis urna ac magna facilisis blandit. Maecenas vel arcu nec ipsum venenatis malesuada. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam semper ac sem at interdum. Ut massa est, egestas id sem at, commodo consequat velit.</p>
+
+<h3>Some Key Takeaways</h3>
+
+<p class="small-font justify">After reading this tremendous blog article, these are the salient points:</p>
+
+<p class="m0 small-font justify">In a pellentesque eros. Morbi elementum venenatis est quis cursus. Nunc vitae mi maximus, volutpat enim nec, ultricies libero. Donec pharetra dui arcu, vel sagittis dolor scelerisque nec!</p>
+  <br>
+</div></div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){  
+  
+  
+  $("#flip").click(function(){
+    $("#panel").slideToggle("slow");   });
+  
+   $("#flip2").click(function(){
+    $("#panel2").slideToggle("slow");   });   
+    
+     $("#flip3").click(function(){
+    $("#panel3").slideToggle("slow");   });   
+ 
+});   
+  
+  (function(d, w, c) {
+        w.ChatraID = 'xAX4srE3GnveRASmH';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+
+</script>
+
+<!--<a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="blank_">-->
+<!--	<span>My Pens List</span>-->
+<!--</a>-->
+</body>
+</html>
